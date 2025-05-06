@@ -1,0 +1,72 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+}
+
+.checkboxInput {
+  display: none;
+}
+
+.customCheckbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid #e261ff;
+  border-radius: 4px;
+  background-color: white;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkboxInput:checked + .customCheckbox {
+  background-color: #e261ff;
+  border-color: #e261ff;
+}
+
+.customCheckbox::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.checkboxInput:checked + .customCheckbox::after {
+  opacity: 1;
+}
+
+.checkboxInput:disabled + .customCheckbox + span {
+  opacity: 0.5;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 5px 0;
+  color: #ffffff;
+  background-color: #e261ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.button:hover:not(:disabled) {
+  background-color: #ca33ec;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

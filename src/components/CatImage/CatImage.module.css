@@ -1,0 +1,16 @@
+.imageWrapper {
+  position: relative;
+  width: 500px;
+  height: 338px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.spinnerWrapper {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 338px;
+}
